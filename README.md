@@ -1,4 +1,4 @@
-# Painless Web Services
+# Reto
 Para iniciar el proyecto cree un archivo `.env` en la raiz del proyecto, los requisitos mínimos son.
 
 ## Requisitos
