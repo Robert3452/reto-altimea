@@ -4,7 +4,6 @@ Para iniciar el proyecto cree un archivo `.env` en la raiz del proyecto, los req
 ## Requisitos
 * Node version 14.15
 * Mongo DB 
-* Redis
 ## Instalación
 Inicie en la raíz del proyecto con: `npm run dev`
 
