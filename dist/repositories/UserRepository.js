@@ -52,7 +52,7 @@ class UserRepo {
     getAll() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const users = yield User_1.default.find();
+                const users = yield User_1.default.find().lean();
                 return users;
             }
             catch (error) {
@@ -67,6 +67,16 @@ class UserRepo {
                 if (!user)
                     throw 'no user';
                 return user;
+            }
+            catch (error) {
+                throw boom_1.default.badRequest(error);
+            }
+        });
+    }
+    bulkWriteUsers(users) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                return yield User_1.default.bulkWrite(users.map(el => ({ insertOne: { document: el } })));
             }
             catch (error) {
                 throw boom_1.default.badRequest(error);

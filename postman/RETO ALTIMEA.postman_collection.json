@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "9827b08a-389e-40cd-8bd6-16816e7509e4",
+		"name": "RETO ALTIMEA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST create users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"email\":\"Mariom@gmail.com\",\r\n        \"names\":\"Mario Miguel\",\r\n        \"lastnames\":\"Meza Garcia\",\r\n        \"phoneNumber\":\"935993155\",\r\n        \"dni\":\"73941116\",\r\n        \"birth\":\"13/02/1996\",\r\n        \"age\":\"25\"\r\n        },\r\n          {\r\n        \"email\":\"Keyla2@gmail.com\",\r\n        \"names\":\"Keyla \",\r\n        \"lastnames\":\"Garcia\",\r\n        \"phoneNumber\":\"955593138\",\r\n        \"dni\":\"73947441\",\r\n        \"birth\":\"13/02/1994\",\r\n        \"age\":\"27\"\r\n        }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ts-api}}/test",
+					"host": [
+						"{{ts-api}}"
+					],
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ts-api}}/test",
+					"host": [
+						"{{ts-api}}"
+					],
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

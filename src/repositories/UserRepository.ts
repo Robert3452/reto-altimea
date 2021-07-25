@@ -28,9 +28,9 @@ class UserRepo implements IRepo<IUser>{
             throw boom.badRequest(error)
         }
     }
-    async getAll(): Promise<IUser[]> {
+    async getAll(): Promise<IUser[] | any> {
         try {
-            const users = await User.find();
+            const users = await User.find().lean();
             return users;
         } catch (error) {
             throw boom.badRequest(error)
@@ -42,6 +42,14 @@ class UserRepo implements IRepo<IUser>{
             if (!user)
                 throw 'no user'
             return user;
+        } catch (error) {
+            throw boom.badRequest(error)
+        }
+    }
+
+    async bulkWriteUsers(users: any[]): Promise<any> {
+        try {
+            return await User.bulkWrite(users.map(el => ({ insertOne: { document: el } })));
         } catch (error) {
             throw boom.badRequest(error)
         }
